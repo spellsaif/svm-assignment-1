@@ -1,0 +1,19 @@
+[workspace]
+members = [".", "votor-budget"]
+resolver = "2"
+
+[package]
+name = "agave-votor-scope"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+votor-budget = { path = "votor-budget" }
+tokio = { version = "1", features = ["full", "tracing"] }
+console-subscriber = "0.4"
+hdrhistogram = "7"
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(tokio_unstable)'] }
