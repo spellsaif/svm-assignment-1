@@ -1,0 +1,32 @@
+[package]
+name = "banking-jitter"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[lib]
+name = "banking_jitter"
+path = "src/lib.rs"
+
+[dev-dependencies]
+votor-budget = { path = "../votor-budget" }
+agave-banking-stage-ingress-types = { path = "../../agave/banking-stage-ingress-types", features = ["agave-unstable-api"] }
+agave-logger = { path = "../../agave/logger", features = ["agave-unstable-api"] }
+crossbeam-channel = "0.5"
+hdrhistogram = "7"
+solana-core = { path = "../../agave/core", features = ["agave-unstable-api"] }
+solana-entry = { path = "../../agave/entry", features = ["agave-unstable-api", "dev-context-only-utils"] }
+solana-hash = "4.3"
+solana-keypair = "3.1"
+solana-ledger = { path = "../../agave/ledger", features = ["agave-unstable-api", "dev-context-only-utils"] }
+solana-perf = { path = "../../agave/perf", features = ["agave-unstable-api"] }
+solana-poh = { path = "../../agave/poh", features = ["agave-unstable-api"] }
+solana-pubkey = "4.2"
+solana-runtime = { path = "../../agave/runtime", features = ["agave-unstable-api", "dev-context-only-utils"] }
+solana-runtime-transaction = { path = "../../agave/runtime-transaction", features = ["agave-unstable-api", "dev-context-only-utils"] }
+solana-signer = "3"
+solana-system-transaction = "4"
+tempfile = "3"
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "sync"] }
